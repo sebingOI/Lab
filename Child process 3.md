@@ -16,16 +16,26 @@
     - `signal` [<AbortSignal>](https://nodejs.org/docs/latest-v15.x/api/globals.html#globals_class_abortsignal) allows aborting the child process using an AbortSignal.
     - 신호 <AbortSignal>을 사용하면 AbortSignal을 사용하여 자식 프로세스를 중단할 수 있습니다.
     - `timeout` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
-    - `maxBuffer` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Largest amount of data in bytes allowed on stdout or stderr. If exceeded, the child process is terminated and any output is truncated. See caveat at `[maxBuffer` and Unicode](https://nodejs.org/docs/latest-v15.x/api/child_process.html#child_process_maxbuffer_and_unicode). **Default:** `1024 * 1024`.
+    - 타임 아웃<수>기본:0
+    - `maxBuffer` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Largest amount of data in bytes allowed on stdout or stderr. If exceeded, the child process is terminated and any output is truncated.
+    - maxBuffer <number> stdout 또는 stderr에 허용되는 최대 데이터 양(바이트 단위). 초과할 경우 하위 프로세스가 종료되고 출력이 잘립니다.
+    - See caveat at `[maxBuffer` and Unicode](https://nodejs.org/docs/latest-v15.x/api/child_process.html#child_process_maxbuffer_and_unicode). **Default:** `1024 * 1024`.
+    - maxBuffer 및 유니코드에서 주의 사항을 참조하십시오. 기본값: 1024 * 1024.
     - `killSignal` [<string>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [<integer>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `'SIGTERM'`
+    - killSignal <string> | <integer> 기본값: 'SIGTERM’
     - `uid` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the user identity of the process (see `[setuid(2)](http://man7.org/linux/man-pages/man2/setuid.2.html)`).
+    - uid <number> 프로세스의 사용자 ID를 설정합니다(setuid(2) 참조).
     - `gid` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the group identity of the process (see `[setgid(2)](http://man7.org/linux/man-pages/man2/setgid.2.html)`).
+    - gid <number> 프로세스의 그룹 ID를 설정합니다(setgid(2) 참조).
     - `windowsHide` [<boolean>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Hide the subprocess console window that would normally be created on Windows systems. **Default:** `false`.
+    - WindowsHide <boolean> Windows 시스템에서 일반적으로 생성되는 하위 프로세스 콘솔 창을 숨깁니다. 기본값: false.
 - `callback` [<Function>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) called with the output when process terminates.
+    - 프로세스가 종료될 때 출력과 함께 콜백 <Function>이 호출됩니다.
     - `error` [<Error>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
     - `stdout` [<string>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [<Buffer>](https://nodejs.org/docs/latest-v15.x/api/buffer.html#buffer_class_buffer)
     - `stderr` [<string>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [<Buffer>](https://nodejs.org/docs/latest-v15.x/api/buffer.html#buffer_class_buffer)
 - Returns: [<ChildProcess>](https://nodejs.org/docs/latest-v15.x/api/child_process.html#child_process_class_childprocess)
+- 반환: <하위 프로세스>
 
 Spawns a shell then executes the `command` within that shell, buffering any generated output. 
 
@@ -96,7 +106,7 @@ exec(3) POSIX 시스템 호출과 달리 child_process.exec()은 기존 프로�
 
 If this method is invoked as its `[util.promisify()](https://nodejs.org/docs/latest-v15.x/api/util.html#util_util_promisify_original)`ed version, it returns a `Promise` for an `Object` with `stdout` and `stderr` properties.
 
-이 메서드가 유틸리티로 호출되는 경우.promy()ed 버전은 stdout 및 stderr 속성을 가진 개체에 대한 Promise를 반환합니다.
+이 메서드가 `[til.promisify()](https://nodejs.org/docs/latest-v15.x/api/util.html#util_util_promisify_original)`ed 버전으로 호출 될 경우 stdout 및 stderr 속성을 가진 개체에 대한 Promise를 반환합니다.
 
  The returned `ChildProcess` instance is attached to the `Promise` as a `child` property.
 
