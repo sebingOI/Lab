@@ -1,3 +1,0 @@
-# DB 구조
-
-![Untitled](DB%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20c476010940e946a1a9e121d32c014529/Untitled.png)
